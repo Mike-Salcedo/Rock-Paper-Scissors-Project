@@ -114,6 +114,5 @@ function game() {
   for (i = 0; i < 5; i++) {
     playRound();
     getFinalWinner();
-    // console.log("Rounds " + i);
   }
 }
