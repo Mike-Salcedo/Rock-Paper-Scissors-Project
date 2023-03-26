@@ -17,7 +17,6 @@ function getComputerChoice() {
 }
 
 // My playRound() function prompts the player for their choice, and uses the random computer selection.
-
 let computerWins = 0;
 let playerWins = 0;
 let roundsPlayed = 0;
@@ -106,7 +105,7 @@ function getFinalWinner() {
   }
 }
 
-// This function makes the game happen by combining other functions.
+// This function makes the game happen by invoking playRound() and getFinalWinner().
 
 function game() {
   let i = 0;
