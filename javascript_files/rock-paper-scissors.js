@@ -8,7 +8,7 @@ function getComputerChoice() {
   const randomComputerChoice = Math.floor(Math.random() * 10) + 1;
 
   if (randomComputerChoice > 6) {
-    return "scissor";
+    return "scissors";
   } else if (randomComputerChoice > 3) {
     return "paper";
   } else {
@@ -21,10 +21,7 @@ let computerWins = 0;
 let playerWins = 0;
 let roundsPlayed = 0;
 
-function playRound(
-  playerSelection = prompt("Make a choice?,rock,paper,scissor").toLowerCase(),
-  computerSelection = getComputerChoice()
-) {
+function playRound(playerSelection, computerSelection = getComputerChoice()) {
   if (playerSelection === "rock" && computerSelection === "paper") {
     console.log(
       "You lose!" +
@@ -32,7 +29,7 @@ function playRound(
     ),
       computerWins++,
       roundsPlayed++;
-  } else if (playerSelection === "rock" && computerSelection === "scissor") {
+  } else if (playerSelection === "rock" && computerSelection === "scissors") {
     console.log(
       "You won!" + ` Computer: ${computerSelection} & Human: ${playerSelection}`
     ),
@@ -44,26 +41,29 @@ function playRound(
         ` Computer: ${computerSelection} & Human: ${playerSelection}`
     ),
       roundsPlayed++;
-  } else if (playerSelection === "scissor" && computerSelection === "rock") {
+  } else if (playerSelection === "scissors" && computerSelection === "rock") {
     console.log(
       "You lose!" +
         ` Computer: ${computerSelection} & Human: ${playerSelection}`
     ),
       computerWins++,
       roundsPlayed++;
-  } else if (playerSelection === "scissor" && computerSelection === "paper") {
+  } else if (playerSelection === "scissors" && computerSelection === "paper") {
     console.log(
       "You won!" + ` Computer: ${computerSelection} & Human: ${playerSelection}`
     ),
       playerWins++,
       roundsPlayed++;
-  } else if (playerSelection === "scissor" && computerSelection === "scissor") {
+  } else if (
+    playerSelection === "scissors" &&
+    computerSelection === "scissors"
+  ) {
     console.log(
       "You tied!" +
         ` Computer: ${computerSelection} & Human: ${playerSelection}`
     ),
       roundsPlayed++;
-  } else if (playerSelection === "paper" && computerSelection === "scissor") {
+  } else if (playerSelection === "paper" && computerSelection === "scissors") {
     console.log(
       "You lose!" +
         ` Computer: ${computerSelection} & Human: ${playerSelection}`
@@ -107,11 +107,40 @@ function getFinalWinner() {
 
 // This function makes the game happen by invoking playRound() and getFinalWinner().
 
-function game() {
-  let i = 0;
+// function game() {
+//   let i = 0;
 
-  for (i = 0; i < 5; i++) {
-    playRound();
-    getFinalWinner();
+//   for (i = 0; i < 5; i++) {
+//     playRound();
+//     getFinalWinner();
+//   }
+// }
+
+// Targets the buttons for the game with the class of playButtons.
+
+function choice(e) {
+  if (e.target.classList.contains("rock")) {
+    // Testing if it'll output
+    playerSelection = "rock";
+    console.log(`player choose ${playerSelection}`);
+    console.log(`Computer choose ${getComputerChoice()}`);
+  } else if (e.target.classList.contains("paper")) {
+    playerSelection = "paper";
+    console.log(`player choose ${playerSelection}`);
+    console.log(`Computer choose ${getComputerChoice()}`);
+  } else if (e.target.classList.contains("scissors")) {
+    playerSelection = "scissors";
+    console.log(`player choose ${playerSelection}`);
+    console.log(`Computer choose ${getComputerChoice()}`);
   }
+  getComputerChoice();
+  playRound((computerSelection = getComputerChoice()));
 }
+
+const playButton = document.querySelectorAll(".playButton");
+
+// This adds an event listener to all of the buttons on the page.
+
+playButton.forEach((btn) => {
+  btn.addEventListener("click", choice);
+});
