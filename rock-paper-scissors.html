@@ -5,11 +5,125 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="./javascript_files/rock-paper-scissors.js" defer></script>
   </head>
   <body>
-    <button class="rock playButton">Rock</button>
-    <button class="paper playButton">Paper</button>
-    <button class="scissors playButton">Scissors</button>
+    <div class="container">
+      <div class="titleSection">
+        <h1 class="title">Rock, Paper, Scissors?</h1>
+      </div>
+
+      <div class="sectionOne">
+        <!-- Box for player  -->
+        <div class="playerBox">
+          <h4 class="playerH4">Player</h4>
+          <div class="playerScoreBoard">
+            <img class="playerImage" src="images/man.png" alt="" srcset="" />
+          </div>
+          <div class="choice">
+            <div class="choiceBox player rock">
+              <p class="text player rock">Rock</p>
+              <img
+                class="stoneImg player rock"
+                src="images/stone.png"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div class="choiceBox player paper">
+              <p class="text player paper">Paper</p>
+              <img
+                class="paperImg player paper"
+                src="images/paper.png"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div class="choiceBox player scissors">
+              <p class="text player scissors">scissors</p>
+              <img
+                class="scissorsImg player scissors"
+                src="images/scissors.png"
+                alt=""
+                srcset=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Box for computer choice -->
+        <div class="computerBox">
+          <h4 class="playerH4">Computer</h4>
+          <div class="computerScoreBoard">
+            <img class="playerImage" src="images/ai.png" alt="" srcset="" />
+          </div>
+          <div class="choice">
+            <div class="choiceBox compuRock">
+              <p class="text rock">Rock</p>
+              <img
+                class="stoneImg rock"
+                src="images/stone.png"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div class="choiceBox compuPaper">
+              <p class="text paper">Paper</p>
+              <img
+                class="paperImg paper"
+                src="images/paper.png"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div class="choiceBox compuScissors">
+              <p class="text">scissors</p>
+              <img
+                class="scissorsImg"
+                src="images/scissors.png"
+                alt=""
+                srcset=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="attributions">
+        <ul>
+          <li>
+            <a
+              href="https://www.flaticon.com/free-icons/rock"
+              title="rock icons"
+              >Rock icons created by Freepik - Flaticon</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.flaticon.com/free-icons/robot"
+              title="robot icons"
+              >Robot icons created by Freepik - Flaticon</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://pixabay.com/users/u_2fbuaev0zn-30247713/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=121244"
+              >Music by: u_2fbuaev0zn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=121244"
+              >Pixabay</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <audio class="clickSound" src="audio/clickSound.mp3"></audio>
   </body>
 </html>
